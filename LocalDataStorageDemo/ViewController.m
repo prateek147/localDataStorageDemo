@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "PDKeychainBindings.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
 
 @property (strong, nonatomic) IBOutlet UITextField *userDefaultsTextField;
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -26,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  [self.scrollView setContentSize:CGSizeMake(320.0, 750.0)];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -50,6 +55,8 @@
 }
 
 - (IBAction)saveInKeychainTapped:(id)sender {
+  PDKeychainBindings *bindings = [PDKeychainBindings sharedKeychainBindings];
+  [bindings setObject:self.keychainTextField.text forKey:@"keychainValue"];
 }
 
 

@@ -23,6 +23,9 @@
 		C935C09E1802D36A001B1756 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C935C0791802D36A001B1756 /* Foundation.framework */; };
 		C935C0A61802D36A001B1756 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C935C0A41802D36A001B1756 /* InfoPlist.strings */; };
 		C935C0A91802D36A001B1756 /* LocalDataStorageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C935C0A81802D36A001B1756 /* LocalDataStorageDemoTests.m */; };
+		C935C0B71802DDFE001B1756 /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = C935C0B41802DDFE001B1756 /* PDKeychainBindings.m */; };
+		C935C0B81802DDFE001B1756 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C935C0B61802DDFE001B1756 /* PDKeychainBindingsController.m */; };
+		C935C0BA1802DEC7001B1756 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C935C0B91802DEC7001B1756 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,11 @@
 		C935C0A51802D36A001B1756 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C935C0A71802D36A001B1756 /* LocalDataStorageDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalDataStorageDemoTests.h; sourceTree = "<group>"; };
 		C935C0A81802D36A001B1756 /* LocalDataStorageDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalDataStorageDemoTests.m; sourceTree = "<group>"; };
+		C935C0B31802DDFE001B1756 /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDKeychainBindings.h; path = "Third Party Classes/PDKeychainBindings.h"; sourceTree = SOURCE_ROOT; };
+		C935C0B41802DDFE001B1756 /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDKeychainBindings.m; path = "Third Party Classes/PDKeychainBindings.m"; sourceTree = SOURCE_ROOT; };
+		C935C0B51802DDFE001B1756 /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDKeychainBindingsController.h; path = "Third Party Classes/PDKeychainBindingsController.h"; sourceTree = SOURCE_ROOT; };
+		C935C0B61802DDFE001B1756 /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDKeychainBindingsController.m; path = "Third Party Classes/PDKeychainBindingsController.m"; sourceTree = SOURCE_ROOT; };
+		C935C0B91802DEC7001B1756 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C935C0BA1802DEC7001B1756 /* Security.framework in Frameworks */,
 				C935C0781802D36A001B1756 /* UIKit.framework in Frameworks */,
 				C935C07A1802D36A001B1756 /* Foundation.framework in Frameworks */,
 				C935C07C1802D36A001B1756 /* CoreGraphics.framework in Frameworks */,
@@ -87,6 +96,7 @@
 		C935C06B1802D369001B1756 = {
 			isa = PBXGroup;
 			children = (
+				C935C0B91802DEC7001B1756 /* Security.framework */,
 				C935C07D1802D36A001B1756 /* LocalDataStorageDemo */,
 				C935C0A11802D36A001B1756 /* LocalDataStorageDemoTests */,
 				C935C0761802D36A001B1756 /* Frameworks */,
@@ -117,6 +127,7 @@
 		C935C07D1802D36A001B1756 /* LocalDataStorageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C935C0B21802DDE7001B1756 /* Third Party Classes */,
 				C935C0861802D36A001B1756 /* AppDelegate.h */,
 				C935C0871802D36A001B1756 /* AppDelegate.m */,
 				C935C08F1802D36A001B1756 /* MainStoryboard.storyboard */,
@@ -158,6 +169,17 @@
 				C935C0A41802D36A001B1756 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C935C0B21802DDE7001B1756 /* Third Party Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C935C0B31802DDFE001B1756 /* PDKeychainBindings.h */,
+				C935C0B41802DDFE001B1756 /* PDKeychainBindings.m */,
+				C935C0B51802DDFE001B1756 /* PDKeychainBindingsController.h */,
+				C935C0B61802DDFE001B1756 /* PDKeychainBindingsController.m */,
+			);
+			name = "Third Party Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +295,8 @@
 				C935C0841802D36A001B1756 /* main.m in Sources */,
 				C935C0881802D36A001B1756 /* AppDelegate.m in Sources */,
 				C935C0941802D36A001B1756 /* ViewController.m in Sources */,
+				C935C0B71802DDFE001B1756 /* PDKeychainBindings.m in Sources */,
+				C935C0B81802DDFE001B1756 /* PDKeychainBindingsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
