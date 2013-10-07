@@ -47,11 +47,13 @@
 }
 
 - (IBAction)saveInPlistFileTapped:(id)sender {
-  NSString *path = [[NSBundle mainBundle] pathForResource:@"userInfo" ofType:@"plist"];
-  NSMutableDictionary* plist = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+  NSString *documentsDirectory = [paths objectAtIndex:0];
+  NSString *filePath = [documentsDirectory stringByAppendingString:@"/userInfo.plist"];
+  NSMutableDictionary* plist = [[NSMutableDictionary alloc] init];
   [plist setValue:self.usernameTextField.text forKey:@"username"];
   [plist setValue:self.passwordTextField.text forKey:@"passwprd"];
-  [plist writeToFile:path atomically:YES];
+  [plist writeToFile:filePath atomically:YES];
 }
 
 - (IBAction)saveInKeychainTapped:(id)sender {
